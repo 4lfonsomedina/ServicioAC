@@ -4,7 +4,8 @@ $(document).ready(function(){
 	refrescar_principal();
 
 	//carga actividades al precionar actualizar
-	$(document).on("click",".btn_actualizar",function(){	
+	$(document).on("click",".btn_actualizar",function(){
+	   	window.location.href = "login.html";	
 		refrescar_principal();	
 	})
 
@@ -46,7 +47,6 @@ $(document).ready(function(){
 			$(".contenedor_principal").hide();
 			$(".contenedor_principal").html(r);
 			$(".contenedor_principal" ).slideDown( "slow" );
-			
 		}) 
    }
 
