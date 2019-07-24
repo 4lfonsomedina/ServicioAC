@@ -6,7 +6,12 @@ $(document).ready(function(){
 	//carga actividades al precionar actualizar
 	$(document).on("click",".btn_actualizar",function(){	
 		refrescar_principal();	
-	});
+	})
+
+	//ocultar otras actividades al dar click en una
+	$(document).on("click",".heading_actividades",function(){
+		$('.collapse.in').collapse('hide');
+	})
 
 	//cargar formulario de conclusion
 	$(document).on("click",".btn_finalizar",function(){
@@ -17,6 +22,23 @@ $(document).ready(function(){
 		}) 
 	})
 
+	//envio de formulario al finalizar tarea
+	$(document).on("click",".finalizar_actividad",function(){
+		if(confirm("LA TAREA SERA MARCADA COMO FINALIZADA?")){
+			var formulario=$("#formulario_finalizar_actividad").serialize();
+			$("#modal_actividades_body").html(loader());
+				$.post("http://servicio-ac.com/index.php/sistemas/sistemas/editar_actividad",formulario,function(r){
+					$("#modal_actividades").modal("hide");
+					refrescar_principal();
+					alert("TAREA FINALIZADA");
+				}) 
+		}
+	})
+
+	//seleccionar todo el texto al presionar un input de numero
+	$(document).on("click",".input_numero",function(){
+		$(this).select();
+	})
 	//funccion que carga actividades
    	function refrescar_principal(){
    		$(".contenedor_principal").html(loader());
