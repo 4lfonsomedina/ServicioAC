@@ -15,7 +15,29 @@
 </head>
 
 <body>
+    <!--Boton de actualizar-->
+    <a class="btn btn-default btn_actualizar"><i class="fa fa-refresh" aria-hidden="true"></i> Actualizar </a>
+
+    <!-- Contenedor principal-->
     <div class="contenedor_principal"></div>
+
+    <!-- MODAL MULTIUSOS -->
+  <div class="modal fade" id="modal_actividades" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="modal_actividades_body"></div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal"> 
+                <i class="fa fa-reply" aria-hidden="true"></i> Cancelar 
+            </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
     
 
     <script type="text/javascript" src="js/cordova.js"></script>
