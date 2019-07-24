@@ -43,7 +43,10 @@ $(document).ready(function(){
    	function refrescar_principal(){
    		$(".contenedor_principal").html(loader());
    		$.post("http://servicio-ac.com/index.php/sistemas/servicio/actividades?d=1",function(r){
+			$(".contenedor_principal").hide();
 			$(".contenedor_principal").html(r);
+			$(".contenedor_principal" ).slideDown( "slow" );
+			
 		}) 
    }
 
