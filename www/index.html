@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
@@ -15,14 +16,24 @@
 </head>
 
 <body>
-    <!--Boton de actualizar-->
-    <a class="btn btn-default btn_actualizar"><i class="fa fa-refresh" aria-hidden="true"></i> Actualizar </a>
+
+    <!--Boton de actualizar y salir-->
+    <div style="height: 6vh">
+        <button  class="btn btn-default btn_actualizar" style="height: 6vh"><i class="fa fa-refresh" aria-hidden="true"></i> Actualizar </button >
+    </div>
 
     <!-- Contenedor principal-->
-    <div class="contenedor_principal"></div>
+    <div style="height: 88vh; overflow-y: auto; padding-top: 15px">
+        <div class="contenedor_principal"></div>
+    </div>
+
+    <!--Boton de salir-->
+    <div style="height: 6vh">
+        <button  class="btn btn-danger btn_salir" style="height: 6vh"><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+    </div>
 
     <!-- MODAL MULTIUSOS -->
-  <div class="modal fade" id="modal_actividades" role="dialog">
+    <div class="modal fade" id="modal_actividades" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -37,8 +48,7 @@
         </div>
       </div>
     </div>
-  </div>
-    
+    </div>
 <!--
     <script type="text/javascript" src="js/cordova.js"></script>
 -->

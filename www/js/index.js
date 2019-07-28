@@ -4,8 +4,12 @@ $(document).ready(function(){
 	refrescar_principal();
 
 	//carga actividades al precionar actualizar
-	$(document).on("click",".btn_actualizar",function(){
-	   	window.location.href = "login.html";	
+	$(document).on("click",".btn_actualizar",function(){	
+		refrescar_principal();	
+	})
+
+	//salir de la aplicacion
+	$(document).on("click",".btn_salir",function(){	
 		refrescar_principal();	
 	})
 
@@ -37,13 +41,15 @@ $(document).ready(function(){
 	})
 
 	//seleccionar todo el texto al presionar un input de numero
-	$(document).on("click",".input_numero",function(){
-		$(this).select();
+	$(document).on("click",".btn_salir",function(){
+		salir_completamente();
 	})
 	//funccion que carga actividades
    	function refrescar_principal(){
+   		verificar_usuario();
    		$(".contenedor_principal").html(loader());
    		$.post("http://servicio-ac.com/index.php/sistemas/servicio/actividades?d=1",function(r){
+   			
 			$(".contenedor_principal").hide();
 			$(".contenedor_principal").html(r);
 			$(".contenedor_principal" ).slideDown( "slow" );
@@ -61,6 +67,21 @@ $(document).ready(function(){
 		"</div><div class='rect5'>"+
 		"</div></div></div>";
 		return loader;
+	}
+
+	//funcion para salir de la aplicacion
+	function salir_completamente(){
+		 window.localStorage.clear();
+		 window.location.replace("login.html");
+	}
+
+	//funcion para verificar datos de session
+	function verificar_usuario(){
+		var usuario = window.localStorage.getItem("usuario");
+		var clave = window.localStorage.getItem("clave");
+		$.post("http://servicio-ac.com/index.php/sistemas/servicio/validar?usuario="+usuario+"&clave="+clave,function(r){
+			if(r=='0'){ alert("Tu session a caducado!");window.location.replace("login.html"); }
+		})
 	}
 
 })

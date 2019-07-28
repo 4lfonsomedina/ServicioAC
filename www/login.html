@@ -21,20 +21,22 @@
                 <center><b>Bienvenido</b></center>
             </div>
             <div class="panel-body">
-                <div class="col col-xs-12">
-                    <label><i class="fa fa-user-o" aria-hidden="true"></i> Usuario
-                        <input type="text" name="usuario" class="form-control">
-                    </label>
-                </div>
-                <div class="col col-xs-12">
-                    <label><i class="fa fa-barcode" aria-hidden="true"></i> Clave
-                        <input type="text" name="password" class="form-control">
-                    </label>
-                </div>
-                <div class="col col-xs-12">
-                    <br>
-                    <a class="btn btn-success"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar</a>
-                </div>
+                <form id="form_login">
+                    <div class="col col-xs-12">
+                        <label><i class="fa fa-user-o" aria-hidden="true"></i> Usuario
+                            <input type="text" name="usuario" class="form-control input_usuario" >
+                        </label>
+                    </div>
+                    <div class="col col-xs-12">
+                        <label><i class="fa fa-barcode" aria-hidden="true"></i> Clave
+                            <input type="password" name="clave" class="form-control input_clave">
+                        </label>
+                    </div>
+                    <div class="col col-xs-12">
+                        <br>
+                        <button type="submit" class="btn btn-success btn_entrar"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar</button>
+                    </div>
+                </form>
             </div>
         </div>
         
@@ -45,7 +47,7 @@
 -->
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/login.js"></script> 
  <!--   
     <script type="text/javascript">
         app.initialize();
