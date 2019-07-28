@@ -58,7 +58,7 @@ $(document).ready(function(){
 
    //loader centrado
    function loader(){
-		var loader="<div class='col col-lg-12 loader_ocu' style='margin-top:40%'>"+
+		var loader="<div class='col col-lg-12 loader_ocu' style='margin-top:35%'>"+
 		"<div class='spinner'>"+
 		"<div class='rect1'>"+
 		"</div><div class='rect2'>"+
