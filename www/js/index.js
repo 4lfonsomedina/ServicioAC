@@ -48,7 +48,7 @@ $(document).ready(function(){
    	function refrescar_principal(){
    		verificar_usuario();
    		$(".contenedor_principal").html(loader());
-   		$.post("http://servicio-ac.com/index.php/sistemas/servicio/actividades?d=1",function(r){
+   		$.post("http://servicio-ac.com/index.php/sistemas/servicio/actividades?t="+window.localStorage.getItem("tipo")+"&p="+window.localStorage.getItem("id_usuario"),function(r){
    			
 			$(".contenedor_principal").hide();
 			$(".contenedor_principal").html(r);
